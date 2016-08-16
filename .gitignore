@@ -1,0 +1,9 @@
+# Pycache
+*__pycache__/
+
+# Blog HTML files
+*public_html/
+
+# Include CSS
+
+!style.css
