@@ -8,7 +8,7 @@ class blogpostParser:
 		blogAttributes = {}
 		
 		for element in splitStringList:
-			key,val = element.partition(" ")[0::2] #Split by first ' ' and disregard separator tuple element
+			key,val = element.partition(" ")[0::2] #Split by first ' ' and disregard separator tuple element (result will always be list of 3 indices)
 			blogAttributes[key] = val
 		return blogAttributes
 
