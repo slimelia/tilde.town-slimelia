@@ -14,7 +14,7 @@ def getBlogpostsFromDir(dirOfPosts):
 	for filename in os.listdir(dirOfPosts):
 		if filename[-3:] == ".md":
 			blogpostDict = {}
-			fileHandler = open(f'{dirOfPosts}/{filename}','r',encoding='utf-8')
+			fileHandler = open(f"{dirOfPosts}/{filename}",'r',encoding='utf-8')
 			lineToParse = fileHandler.readline()
 			blogpostDict["body"] = markdown.markdown(fileHandler.read())
 			fileHandler.close()
@@ -54,7 +54,7 @@ def generateBlogPages(dirToWriteTo,blogpostList,templates):
 		siteHtml = generateSite(SITE_TEMPLATE,siteContent)
 #		parsedSiteHtml = bs4.BeautifulSoup(siteHtml, 'html.parser')
 		
-		fileHandler = open("{0}/{1}".format(dirToWriteTo,blogpostObj['filename']),"w")
+		fileHandler = open(f"{dirToWriteTo}/{blogpostObj['filename']}","w")
 #		fileHandler.write(parsedSiteHtml.prettify())
 		fileHandler.write(siteHtml)
 		fileHandler.close()
