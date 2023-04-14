@@ -12,7 +12,7 @@ def getBlogpostsFromDir(dirOfPosts):
 	
 	
 	for filename in os.listdir(dirOfPosts):
-		if filename[-2:] == "md":
+		if filename[-3:] == ".md":
 			blogpostDict = {}
 			fileHandler = open(f'{dirOfPosts}/{filename}','r',encoding='utf-8')
 			lineToParse = fileHandler.readline()
