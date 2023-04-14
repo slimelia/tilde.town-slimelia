@@ -12,19 +12,20 @@ def getBlogpostsFromDir(dirOfPosts):
 	
 	
 	for filename in os.listdir(dirOfPosts):
-		blogpostDict = {}
-		fileHandler = open('{0}/{1}'.format(dirOfPosts,filename),'r',encoding='utf-8')
-		lineToParse = fileHandler.readline()
-		blogpostDict["body"] = markdown.markdown(fileHandler.read())
-		fileHandler.close()
+		if filename[-2:] == "md":
+			blogpostDict = {}
+			fileHandler = open(f'{dirOfPosts}/{filename}','r',encoding='utf-8')
+			lineToParse = fileHandler.readline()
+			blogpostDict["body"] = markdown.markdown(fileHandler.read())
+			fileHandler.close()
 		
-		blogpostDict['filename'] = filename.replace(".md",".html")
+			blogpostDict['filename'] = filename.replace(".md",".html")
 		
-		blogpostAttributes = blogParser.splitBlogStringToDict(lineToParse)
-		blogpostAttributes["title"] = blogpostAttributes["title"].lower()
-		blogpostDict.update(blogpostAttributes)
-		
-		blogpostList.append(blogpostDict)
+			blogpostAttributes = blogParser.splitBlogStringToDict(lineToParse)
+			blogpostAttributes["title"] = blogpostAttributes["title"].lower()
+			blogpostDict.update(blogpostAttributes)
+			
+			blogpostList.append(blogpostDict)
 	
 	blogpostList.sort(key=lambda postInList: postInList['date'],reverse=True)
 	
