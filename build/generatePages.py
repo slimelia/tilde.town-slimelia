@@ -54,7 +54,7 @@ def generateBlogPages(dirToWriteTo,blogpostList,templates):
 		siteHtml = generateSite(SITE_TEMPLATE,siteContent)
 #		parsedSiteHtml = bs4.BeautifulSoup(siteHtml, 'html.parser')
 		
-		fileHandler = open(f"{dirToWriteTo}/{blogpostObj['filename']}","w")
+		fileHandler = open(f"{dirToWriteTo}/{blogpostObj['filename']}","w+")
 #		fileHandler.write(parsedSiteHtml.prettify())
 		fileHandler.write(siteHtml)
 		fileHandler.close()
