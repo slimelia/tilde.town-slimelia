@@ -1,6 +1,6 @@
 @title rip cohost :( @author slimelia @date 2024-09-16
 
-so cohost is dying, huh! maybe i should actually use this blog LMAO
+so cohost is dying, huh! maybe i should actually use this blog LMAO <br />
 mind that i do, in fact, still post semi-regularly to my gemlog at this address. but as a result this lil weblog has been neglected. woopsie...
 
 such a shame about cohost though. there were flaws but i love what they were trying to achieve. i hate that they - *we* - were unable to create a successful and sustainable social media site. when it comes to managing running costs, decentralisation really is the best bet huh? i *still* can't get on board with mastodon though, idk why. the fractured nature of the fediverse isn't something i enjoy i think? idk.
