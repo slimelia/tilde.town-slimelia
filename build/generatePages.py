@@ -67,7 +67,7 @@ def generateBlogPages(dirToWriteTo,blogpostList,templates):
 def generateAtomFeed(blogpostList,rootURL,title):
     feedGen  = FeedGenerator()
     feedGen.title(title)
-    feedGen.link(href=rootURL, rel='alternate')
+    feedGen.link(href=f"{rootURL}/atom.xml", rel='alternate')
     feedGen.id(rootURL)
     feedGen.updated(f'{blogpostList[0]["date"]}{TIMESTAMP_STRING}')
     for post in blogpostList:
