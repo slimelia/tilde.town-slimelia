@@ -1,0 +1,11 @@
+# The root URL for your blog - this is needed for Atom feeds.
+# Doesn't actually need to be the root of your entire website,
+# just the URL of the blog index page.
+#
+# If field is empty, Atom feed will not be generated.
+
+#rootURL = ""
+rootURL = "https://tilde.town/~slimelia"
+
+# Title of blog as it will appear in Atom feed.
+title = "DIGITAL DEBUTANTE"
