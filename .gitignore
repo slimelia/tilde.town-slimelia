@@ -1,6 +1,9 @@
 # Pycache
 *__pycache__/
 
+# Python files
+*.py
+
 # Blog HTML files
 *public_html/*
 
