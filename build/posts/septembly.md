@@ -1,4 +1,6 @@
 @title septembly @date 2024-10-04T14:19 @author slimelia
+*NOTE: The following post has been manually mirrored from my Gemini gemlog. For more information, read this [post](https://tilde.town/~slimelia/pages/gemlog.html)*
+
 omg hiiiiiiiiii!! how we all doing? theres no comments on my blogs you can't answer that sorry
 
 keep meaning to write a new gemlog post but i kept putting it off for various reasons (mainly due to workin on personal projects) and now i have a lot to talk about!!
@@ -38,6 +40,6 @@ update on personal organisation from the last post: i bloody LOVE Zim. i'm using
 and now, dear readers, we're here once again: at the end of a gemlog, with me having no idea how to end it. i'm going to put some links down below relating to stuff from this post. click them or don't idk it's your choice <3 <br />
 anyway: THX 4 READING BYE XOXO
 
-[slimeblogger repository](https://github.com/slimelia/slimeblogger) <br />
-[details about the gemlog, for those of you reading this on the web who want to learn more](https://tilde.town/~slimelia/pages/gemlog.html) <br />
-[lagrange, the gemini browser i mentioned that's really the best one available on any platform](https://gmi.skyjake.fi/lagrange/)
+* [slimeblogger repository](https://github.com/slimelia/slimeblogger) <br />
+* [details about the gemlog, for those of you reading this on the web who want to learn more](https://tilde.town/~slimelia/pages/gemlog.html) <br />
+* [lagrange, the gemini browser i mentioned that's really the best one available on any platform](https://gmi.skyjake.fi/lagrange/)
