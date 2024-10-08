@@ -10,3 +10,6 @@
 
 # Include CSS
 !*style.css
+
+# dotenv
+*.env
