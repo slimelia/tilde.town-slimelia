@@ -4,6 +4,7 @@
 # Python files
 *.py
 !build/postutils.py
+!build/mailer.py
 
 # Blog HTML files
 *public_html/*
