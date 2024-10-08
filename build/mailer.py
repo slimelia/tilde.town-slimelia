@@ -68,6 +68,8 @@ def upload_to_server() -> None:
     for file in page_files:
         dest_path = '/'.join(file.parts[1:])
         sftp.put(file, dest_path)
+    sftp.close()
+    ssh_client.close()
 
 
 def main() -> int:
