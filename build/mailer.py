@@ -6,8 +6,10 @@ variable, generate files, then send to server."""
 import sys
 import os
 import imaplib
+from collections.abc import Generator
 from email import message_from_bytes
 from email.message import Message
+from pathlib import Path
 from dotenv import load_dotenv
 import paramiko
 import generate_pages
@@ -37,21 +39,43 @@ def fetch_mail() -> list:
     imap_server.logout()
     return posts
 
+def write_md_files(posts: dict) -> None:
+    for post in posts:
+        with open(f"posts/{post[0]}.md", "w", encoding="utf-8") as f:
+            f.write(post[1])
 
-def main():
+def upload_to_server() -> None:
+    key_file: str = os.getenv("SSH_ID_PATH", "")
+    hostname: str = os.getenv("SSH_HOSTNAME", "")
+    username: str = os.getenv("USERNAME", "")
+    ssh_client: paramiko.SSHClient = paramiko.SSHClient()
+    ssh_client.load_system_host_keys()
+    ssh_client.connect(hostname, key_filename=key_file, username=username)
+    sftp: paramiko.SFTPClient = ssh_client.open_sftp()
+    pub_html = Path("../public_html/")
+    index_files: Generator[Path] = (f for f in pub_html.iterdir()
+                                    if not f.is_dir())
+    for file in index_files:
+        dest_path = '/'.join(file.parts[1:])
+        sftp.put(file, dest_path)
+    pages_html = Path("../public_html/pages/")
+    page_files: Generator[Path] = (f for f in pages_html.iterdir()
+                                   if not f.is_dir())
+    for file in page_files:
+        dest_path = '/'.join(file.parts[1:])
+        sftp.put(file, dest_path)
+
+
+
+
+def main() -> int:
     """Fetch posts from email address in ACCOUNT_USERNAME environment
     variable, generate files, then send to server."""
     load_dotenv(".env")
     posts = fetch_mail()
-    for post in posts:
-        with open(f"posts/{post[0]}.md", "w", encoding="utf-8") as f:
-            f.write(post[1])
+    write_md_files(posts)
     generate_pages.main()
-    ssh_client: paramiko.SSHClient = paramiko.SSHClient()
-    key_file: str = os.getenv("SSH_ID_PATH", "")
-    hostname: str = os.getenv("SSH_HOSTNAME", "")
-    username: str = os.getenv("USERNAME", "")
-    ssh_client.connect(hostname, key_filename=key_file, username=username)
+    upload_to_server()
     return 0
 
 
