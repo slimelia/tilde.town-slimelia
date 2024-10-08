@@ -39,12 +39,16 @@ def fetch_mail() -> list:
     imap_server.logout()
     return posts
 
-def write_md_files(posts: dict) -> None:
+
+def write_md_files(posts: list) -> None:
+    """Create Markdown post files in posts directory"""
     for post in posts:
         with open(f"posts/{post[0]}.md", "w", encoding="utf-8") as f:
             f.write(post[1])
 
+
 def upload_to_server() -> None:
+    """Upload via SFTP to destination"""
     key_file: str = os.getenv("SSH_ID_PATH", "")
     hostname: str = os.getenv("SSH_HOSTNAME", "")
     username: str = os.getenv("USERNAME", "")
@@ -64,8 +68,6 @@ def upload_to_server() -> None:
     for file in page_files:
         dest_path = '/'.join(file.parts[1:])
         sftp.put(file, dest_path)
-
-
 
 
 def main() -> int:
