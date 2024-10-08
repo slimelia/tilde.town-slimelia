@@ -79,9 +79,10 @@ def main() -> int:
     variable, generate files, then send to server."""
     load_dotenv(".env")
     posts = fetch_mail()
-    write_md_files(posts)
-    generate_pages.main()
-    upload_to_server()
+    if posts:
+        write_md_files(posts)
+        generate_pages.main()
+        upload_to_server()
     return 0
 
 
