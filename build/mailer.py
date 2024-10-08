@@ -32,7 +32,8 @@ def fetch_mail() -> list:
         msg: list
         _, msg = imap_server.fetch(num, "RFC822")
         if isinstance(msg, list):
-            this_email: Message = message_from_bytes(quopri.decode(msg[0][1]))
+            decoded_msg: bytes = quopri.decode(msg[0][1])
+            this_email: Message = message_from_bytes(decoded_msg)
             if sender in this_email.get("From", ""):
                 posts.append((this_email.get("Subject", ""),
                               this_email.get_payload()))
