@@ -1,6 +1,8 @@
-<article class="blogpost">
-	<h2><a href="/~slimelia/pages/{{filename}}" title="permalink">{{title}}</a></h2>
-	<p class="subheader">author: {{author}} &emsp; date: {{date}}</p>
-	{{{body}}}
+<article class="blogpost h-entry">
+    <h2 class="p-name"><a href="/~slimelia/pages/{{filename}}" title="permalink" class="u-url u-uid" rel=canonical>{{title}}</a></h2>
+    <p class="subheader">author: <span class="p-author">{{author}}</span> &emsp; date: <time class="dt-published" datetime={{date}}>{{date}}</time></p>
+    <div class="e-content">
+        {{{body}}}
+    </div>
 </article>
 <hr class="postSeparator">
