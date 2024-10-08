@@ -6,6 +6,7 @@ variable, generate files, then send to server."""
 import sys
 import os
 import imaplib
+import quopri
 from collections.abc import Generator
 from email import message_from_bytes
 from email.message import Message
@@ -31,7 +32,7 @@ def fetch_mail() -> list:
         msg: list
         _, msg = imap_server.fetch(num, "RFC822")
         if isinstance(msg, list):
-            this_email: Message = message_from_bytes(msg[0][1])
+            this_email: Message = message_from_bytes(quopri.decode(msg[0][1]))
             if sender in this_email.get("From", ""):
                 posts.append((this_email.get("Subject", ""),
                               this_email.get_payload()))
