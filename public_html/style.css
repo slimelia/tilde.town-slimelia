@@ -9,88 +9,96 @@
 
 
 body {
-	font-family: Libre Baskerville, sans-serif;
-	background-image: url("https://tilde.town/~slimelia/index_files/bg.jpeg");
+    font-family: Libre Baskerville, sans-serif;
+    background-image: url("https://tilde.town/~slimelia/index_files/bg.jpeg");
     background-repeat: repeat;
     color: white;
-	}
+    }
 
 header {
-	text-align: center;
-	}
+    text-align: center;
+    }
 
 a {
-	color: silver;
-	text-decoration: none;
+    color: silver;
+    text-decoration: none;
 }
 
 a:hover {
-	color: white;
-	text-decoration: none;
-	}
+    color: white;
+    text-decoration: none;
+    }
 
 nav ul {
-	text-align: center;
-	margin: 0;
+    text-align: center;
+    margin: 0;
     padding: 0;
-	}
-	
+    }
+
 nav li {
-	list-style-type: none;
+    list-style-type: none;
     margin: 0;
     padding: 0;
     display: inline;
-	}
-	
+    }
+
 nav a{
-	display: block;
-	display: inline;
-	}
+    display: block;
+    display: inline;
+    }
 
 nav a:hover {
-	display: block;
-	display: inline;
-	}
-	
+    display: block;
+    display: inline;
+    }
+
 header hr {
-	width: 80vw;
-	margin-bottom: 6vh;
-	}
-	
+    width: 80vw;
+    margin-bottom: 6vh;
+    }
+
 h1.pageHeader {
-	text-align: center;
-	font-size: 5vw;
-	margin: 0;
+    text-align: center;
+    font-size: 5vw;
+    margin: 0;
     padding: 0;
-	}
+    }
 
 article h2 {
-	text-align: center;
-	margin: 0;
-	}
+    text-align: center;
+    margin: 0;
+    }
 
 
 article p.subheader {
-	text-align: center;
-	font-size: 1vw;
-	letter-spacing: 0.1vw;
-	padding-bottom:0.5vw;
+    text-align: center;
+    font-size: 1vw;
+    letter-spacing: 0.1vw;
+    padding-bottom:0.5vw;
 }
 
 article img {
-	max-width: 100%;
+    max-width: 100%;
 }
 
 hr.postSeparator {
-	width: 40vw;
+    width: 40vw;
 }
 
-.blogpost {
-	padding-left: 30vw;
-	padding-right: 30vw;
-	}
-	
+@media (orientation: landscape), (max-width:600px) {
+  .blogpost {
+    padding-left: 30vmax;
+    padding-right: 30vmax;
+  }
+}
+
+@media (orientation: portrait) {
+  .blogpost {
+    padding-left: 15vmin;
+    padding-right: 15vmin;
+  }
+
 .about {
-	padding-left: 20vw;
-	padding-right: 20vw;
-	}
+    padding-left: 20vw;
+    padding-right: 20vw;
+    }
