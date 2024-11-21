@@ -5,8 +5,7 @@ and they wrap their images in figure tags. so lets see if that does
 anything. please enjoy the below image: a fake youtube thumbnail i made
 for a tweet
 
-<figure><img src="https://tilde.town/~slimelia/pages/testing images..
-TWO!/theranos.jpg" alt="Fake video thumbnail for a video called
+<figure><img src="https://tilde.town/~slimelia/pages/testing_images.._TWO!/theranos.jpg" alt="Fake video thumbnail for a video called
 &quot;Everyone Is Wrong About Elizabeth Holmes&quot; by &quot;Winkle
 Bibbler&quot;. Thumbnail is black-and-white photo of Elizabeth Holmes in
 profile alongside text that reads &quot;she was RIGHT.&quot; The word
