@@ -4,6 +4,7 @@
 variable, generate files, then send to server."""
 
 import sys
+import re
 import os
 import imaplib
 import quopri
@@ -46,7 +47,7 @@ def write_md_files(posts: list) -> None:
     """Create Markdown post files in posts directory"""
     for post in posts:
         with open(f"posts/{post[0]}.md", "w", encoding="utf-8") as f:
-            f.write(post[1])
+            f.write(re.sub(r'(?<!\n)\n(?!\n)', '', post[1]))
 
 
 def upload_to_server() -> None:
