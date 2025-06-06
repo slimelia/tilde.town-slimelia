@@ -24,4 +24,4 @@ i've also started playing Dread Delusion. and god, if i liked the vibes being co
 
 funny how i said "i don't really have anything to say on here" and yet here i am going on about anything that pops into my mind LOL. anyways thankies for reading. if you have any comments/thoughts or just want a chat honestly, shoot me an email at [slimeblog@slimelia.uk](mailto:slimeblog@slimelia.uk) <3
 
-byee 
+byee

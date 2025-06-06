@@ -4,4 +4,4 @@ a new age of posting begins.... being able to post whenever i want easily from m
 
 i'm gonna start posting blog posts while in Tesco. i'm gonna post them while sat on a *train*. blogging has never been so advanced
 
-sorry in advance (but like not **THAT** sorry) 
+sorry in advance (but like not **THAT** sorry)
