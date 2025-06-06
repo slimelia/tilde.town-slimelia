@@ -16,6 +16,8 @@ from dotenv import load_dotenv
 import paramiko
 import generate_pages
 
+MAC_LINE_ENDING = b'\r'
+WINDOWS_LINE_ENDING = b'\r\n'
 
 def fetch_mail() -> list:
     """Fetch posts from email address"""
@@ -46,8 +48,10 @@ def fetch_mail() -> list:
 def write_md_files(posts: list) -> None:
     """Create Markdown post files in posts directory"""
     for post in posts:
+        line_fixed_post = re.sub(r'(?<!\n)\n(?!\n)', '', post[1])
+        post_crlf = line_fixed_post.replace('\r', '\n')
         with open(f"posts/{post[0]}.md", "w", encoding="utf-8") as f:
-            f.write(re.sub(r'(?<!\n)\n(?!\n)', '', post[1]))
+            f.write(post_crlf)
 
 
 def upload_to_server() -> None:
